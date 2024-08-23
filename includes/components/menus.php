@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <a class="navbar-brand me-0" href="#">
                 <span class="fa fa-bars ms-2" onclick="toggleSide()"></span>
-                بوابة الكفاءة
+                Zara Store
             </a>
             <div class="text-end">
                 <a href="logout"><span class="fa fa-arrow-right-from-bracket"></span></a>

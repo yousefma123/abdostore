@@ -6,7 +6,7 @@
         die();
     }
     $settings = true;
-    $page_title = "بوابة الكفاءة | تسجيل الدخول";
+    $page_title = "Zara Store | login";
     include("../includes/components/header.php");
     if(!isset($_SESSION['token']) || empty($_SESSION['token'])){
         require ('../classes/Functions.php');
