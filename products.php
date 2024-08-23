@@ -75,7 +75,7 @@
                     <div class="product_tap_info w-100">
                         <h1 class="fw-bold h2 w-75 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s"><?= $getProduct['fetch']['name'] ?></h1>
                         <div class="model mt-4 text-muted text-small wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s"><span class="ms-1">رقم الموديل:</span> <?= $getProduct['fetch']['model'] ?></div>
-                        <div class="price fw-bold h4 mt-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s">SAR <?= number_format($getProduct['fetch']['price'], 2) ?> <span class="tax text-muted fs-7 fw-bold me-2">(شامل الضرائب)</span></div>
+                        <div class="price fw-bold h4 mt-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s">EGY <?= number_format($getProduct['fetch']['price'], 2) ?> <span class="tax text-muted fs-7 fw-bold me-2">(شامل الضرائب)</span></div>
                         <div class="card details mt-4 shadow-sm rounded-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s">
                             <div class="card-body pt-3">
                                 <span class="rounded-4 p-2 fs-7 ps-3 pe-3 title">المواصفات</span>
