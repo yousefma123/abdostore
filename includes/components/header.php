@@ -25,9 +25,9 @@ if(@$settings == true){
     <meta name="twitter:description" content="<?= isset($og_description) ? $og_description : ' ' ;?>" />
     <meta name="twitter:image" content="<?= isset($og_image) ? $url.$og_image : $url.'/includes/uploads/images/store.svg' ;?>" />
     <meta name="keywords" content="Zara Euphoira Box, zara store, store, zara box,Euphoira Box">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= $url ?>/includes/uploads/images/apple-touch-icon.png">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="<?= $url ?>/includes/uploads/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $url ?>/includes/uploads/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= $url ?>/includes/uploads/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $url ?>/includes/uploads/images/favicon-16x16.png"> -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/owl.carousel.min.css">
