@@ -1,0 +1,11 @@
+# robots.txt file for Kafaatgate
+# Directories
+User-agent: *
+Allow: /includes/uploads/products/images/*
+Disallow: /includes/*
+Allow: /index.php
+Allow: /products.php
+Allow: /all-products.php
+Disallow: /classes/*
+Disallow: /mainadmins/*
+Disallow: /init.php
