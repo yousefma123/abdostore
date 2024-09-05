@@ -18,7 +18,7 @@
         }
     </style>
 
-    <section class="header position-relative mt-2">
+    <section class="header position-relative mt-2 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s">
         <div class="container">
             <div id="carouselExampleFade" class="carousel slide carousel-fade overflow-hidden autoplay rounded-4" data-bs-ride="carousel">
                 <div class="carousel-inner">
