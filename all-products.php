@@ -34,13 +34,13 @@
                                     <div class="_rgba w-100 h-100 position-absolute"></div>
                                     <img src="<?= $url ?>/includes/uploads/products/images/<?= $first_image ?>" alt="item">
                                 </div>
-                                <div class="item_description p-3 shadow-sm mt-3">
-                                    <div class="fw-bold h5"><?= strlen($product['name']) > 40 ? mb_substr($product['name'], 0, 40).'...' : $product['name'] ; ?></div>
+                                <div class="item_description p-3  mt-1">
+                                    <a href="<?= $url ?>/products?pn=<?= str_replace([' ',',','.', '@','،'], '-', $product['name']) ?>&pid=<?= $product['id'] ?>" class="h6"><?= strlen($product['name']) > 40 ? mb_substr($product['name'], 0, 40).'...' : $product['name'] ; ?></a>
                                     <div class="_more_details d-flex justify-content-between align-items-center gap-2 mt-2">
-                                        <div class="fw-bold h5 mt-0 rounded-4 ps-3 pe-0 h-100"><sub class="fs-7 fw-bold">EGY </sub><?= number_format($product['price'], 2); ?></div>
-                                        <a href="products?pn=<?= str_replace([' ',',','.', '@','،'], '-', $product['name']) ?>&pid=<?= $product['id'] ?>" class="btn btn-default rounded-4 w-100">
+                                        <div class="fw-bold h6 mt-0 rounded-4 ps-3 pe-0 h-100">EGP <?= number_format($product['price'], 2); ?></div>
+                                        <!-- <a href="" class="btn btn-default rounded-4 w-100">
                                             شراء
-                                        </a>
+                                        </a> -->
                                     </div>
                                 </div>
                             </div>

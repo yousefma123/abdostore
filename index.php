@@ -5,45 +5,57 @@
     require('init.php');
 ?>
 
-    <section class="header h-100 overflow-hidden position-relative">
-        <?php include('includes/components/main-header.php'); ?>
-        <div class="_headerContent position-relative">
-            <div class="container position-relative d-flex justify-content-center align-items-center">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="_textContent ps-3 pe-3 d-flex w-100 h-100 justify-content-center flex-column">
-                            <h1 class="fw-bold wow fadeInRight" data-wow-duration="1s" data-wow-delay="0s"><?= $Functions->select("`value`", "`settings`", "fetch", "WHERE `key` = 'title'")['fetch']['value']; ?></h1>
-                            <p class="fw-bold h5 mt-3 w-90 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s"><?= $Functions->select("`value`", "`settings`", "fetch", "WHERE `key` = 'description'")['fetch']['value']; ?></p>
-                            <button onclick="_getSection()" type="button" class="shadow-sm mt-3 btn btn-default rounded-5 border-0 p-3 ps-4 pe-4 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">تسوق الآن <span class="fa fa-arrow-left pe-2"></span></button>
-                        </div>
+    <?php include('includes/components/main-header.php'); ?>
+
+    <style>
+        .header img{
+            height: 550px;
+        }
+        @media(max-width:800px){
+            .header img{
+                height:300px;
+            }
+        }
+    </style>
+
+    <section class="header position-relative mt-2">
+        <div class="container">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade overflow-hidden autoplay rounded-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?= $url ?>/includes/uploads/images/slide1.jpg" class="d-block w-100" alt="image1">
                     </div>
-                    <!-- <div class="col-lg-6 col-md-12">
-                        <div class="_imageContent d-flex w-100 h-100 justify-content-center flex-column align-items-center">
-                            <div class="_svgClip position-absolute"></div>
-                            <img src="<?= $url ?>/includes/uploads/images/home.webp" alt="Zara Euphoria Box" class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">
-                        </div>
-                    </div> -->
+                    <div class="carousel-item">
+                        <img src="<?= $url ?>/includes/uploads/images/slide2.jpg" class="d-block w-100" alt="image1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?= $url ?>/includes/uploads/images/slide3.jpg" class="d-block w-100" alt="image1">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </div>
-        <div class="_arrow_down position-absolute">
-            <span class="fa fa-angles-down cssanimation coolVerticalShake" onclick="_getSection()"></span>
         </div>
     </section>
     
-    <section class="web_items main_section" id="categories_products">
+    <section class="web_items main_section py-5" id="categories_products">
         <div class="container">
             <div class="mb-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0s">
-                <h1 class="text-center fw-bold mb-3">المنتجات والأقسام</h1>
+                <h1 class="text-center fw-bold mb-3">Zara Euphoria Box</h1>
                 <div class="_headerBorder1 mb-2"></div>
                 <div class="_headerBorder2"></div>
             </div>
             <div class="row">
                 <!-- Categories -->
-                <?php $getCategories = $Functions->select("`id`, `name_ar`, `name_en`", "`categories`", "fetchAll", "WHERE `status` = 1", "", "ORDER BY `arrangement` ASC"); ?>
-                <div class="col-md-12 mb-3">
+                <!-- <div class="col-md-12 mb-3">
                     <div class="owl-carousel owl-theme owl-carousel-services show-services-cards pe-3 ps-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".1s">
-                        <?php foreach($getCategories['fetchAll'] as $category): ?>
+                        <?php foreach($categories['fetchAll'] as $category): ?>
                             <a href="<?= $url ?>/all-products?category=<?= $category['id'] ?>">
                                 <div class="item pt-2 pb-2">
                                     <div class="one-service w-100 rounded-3 d-flex justify-content-between align-items-center p-4">
@@ -53,12 +65,12 @@
                             </a>
                         <?php endforeach; ?>
                     </div>
-                </div>
+                </div> -->
                 <!-- Items -->
                 <div class="col-lg-12 col-12">
                     <div class="row">
                         <?php
-                            foreach($getCategories['fetchAll'] as $category):
+                            foreach($categories['fetchAll'] as $category):
                                 $category_id = $category['id'];
                                 $getProducts = $Functions->select("*", "`products`", "fetchAll", "WHERE `category_id` = $category_id && `status` = 1", "LIMIT 9", "ORDER BY RAND()");
                                 if($getProducts['rowCount'] > 0):
@@ -78,13 +90,13 @@
                                                 <div class="_rgba w-100 h-100 position-absolute"></div>
                                                 <img src="<?= $url ?>/includes/uploads/products/images/<?= $first_image ?>" alt="item">
                                             </div>
-                                            <div class="item_description p-3 shadow-sm mt-3">
-                                                <div class="fw-bold h5"><?= strlen($product['name']) > 40 ? mb_substr($product['name'], 0, 40).'...' : $product['name'] ; ?></div>
+                                            <div class="item_description p-3  mt-1">
+                                                <a href="<?= $url ?>/products?pn=<?= str_replace([' ',',','.', '@','،'], '-', $product['name']) ?>&pid=<?= $product['id'] ?>" class="h6"><?= strlen($product['name']) > 40 ? mb_substr($product['name'], 0, 40).'...' : $product['name'] ; ?></a>
                                                 <div class="_more_details d-flex justify-content-between align-items-center gap-2 mt-2">
-                                                    <div class="fw-bold h5 mt-0 rounded-4 ps-3 pe-0 h-100"><sub class="fs-7 fw-bold">EGY </sub><?= number_format($product['price'], 2); ?></div>
-                                                    <a href="products?pn=<?= str_replace([' ',',','.', '@','،'], '-', $product['name']) ?>&pid=<?= $product['id'] ?>" class="btn btn-default rounded-4 w-100">
+                                                    <div class="fw-bold h6 mt-0 rounded-4 ps-3 pe-0 h-100">EGP <?= number_format($product['price'], 2); ?></div>
+                                                    <!-- <a href="" class="btn btn-default rounded-4 w-100">
                                                         شراء
-                                                    </a>
+                                                    </a> -->
                                                 </div>
                                             </div>
                                         </div>
