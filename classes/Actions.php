@@ -67,7 +67,7 @@
                 $errors[] .= "Error in item details";
             }
 
-            if(isset($data['images']) && count($data['images']['tmp_name']) >= 1 && count($data['images']['tmp_name']) <= 4){
+            if(isset($data['images']) && count($data['images']['tmp_name']) >= 1 && count($data['images']['tmp_name']) <= 5){
 
                 foreach($data['images']['tmp_name'] as $key => $image){
                     $array_img = [

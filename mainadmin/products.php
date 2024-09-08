@@ -146,7 +146,7 @@
                                     <input type="text" name="model" class="form-control" placeholder="رقم الموديل">
                                 </div>
                                 <div class="col-md-12">
-                                    <label class="fs-7 fw-bold" for="">المواصفات الفنية *</label>
+                                    <label class="fs-7 fw-bold" for="">مواصفات المنتج  *</label>
                                     <div class="row align-items-center">
                                         <div class="col-md-11">
                                             <div class="row" id="addNewInput">

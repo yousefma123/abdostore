@@ -33,7 +33,7 @@ if(@$settings == true){
     <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/animate.css">
-    <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/style.css">
+    <link rel="stylesheet" href="<?= $url ?>/includes/layouts/css/style.css?new">
 </head>
 <body dir="rtl" <?= isset($background) ?  "style='background:$background !important'" : '' ; ?>>
 <?php } ?>
